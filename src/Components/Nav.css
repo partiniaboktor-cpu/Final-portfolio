@@ -1,0 +1,35 @@
+
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 40px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  gap: 55%;
+}
+
+.logo {
+  font-size: 40px;
+  font-family: "Great Vibes", cursive;
+  width: 4%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.nav-links:hover {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #F87171;
+}
