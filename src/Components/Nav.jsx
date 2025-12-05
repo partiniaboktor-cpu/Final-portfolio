@@ -3,6 +3,7 @@ import React from "react";
 import "../Components/Nav.css";
 import { Component } from 'react';
 import mylogo from '../Images/mylogo.svg'
+import icon1 from '../Images/icon1.svg' ;
 
 const Navbar = () => {
   return (

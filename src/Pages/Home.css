@@ -1,8 +1,396 @@
-.body{
-  /* background-image: url("../Images/lightbackground.svg"); */
-    /* width: 100%;
-    position: relative;
-    background-size: cover;
+.whoami-container {
+width: 100%;
+min-height: 120vh;
+background: url('../Images/darkbackground.svg') center/cover no-repeat;
+color: white;
+font-family: 'Poppins', sans-serif;
+position: relative;
+padding-top: 40px;
+text-align: center;
+}
+
+.title {
+  font-size: 70px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: white;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  margin-bottom: 40px;
+  font-family: "Comforter", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.center-image {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 25px;
+  display: block;
+}
+
+/* ICON POSITIONS */
+.icon {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; */
+  position: absolute;
+}
+
+.beach {
+  background-image: url('../Images/icon1.svg');
+  left: 15%;
+  top: 25%;
+}
+
+.notes {
+  background-image: url('../Images/icon2.svg');
+  right: 15%;
+  top: 25%;
+}
+
+.coding {
+  background-image: url('../Images/icon3.svg');
+  left: 15%;
+  top: 65%;
+}
+
+.coffee {
+  background-image: url('../Images/icon4.svg');
+  right: 10%;
+  top: 55%;
+}
+
+.weather {
+  background-image: url('../Images/icon5.svg');
+  left: 46%;
+  top: 85%;
+}
+
+.shopping {
+  background-image: url('../Images/icon6.svg');
+  right: 20%;
+  top: 78%;
+}
+
+.arrow {
+  width: 120px;
+  height: 120px;
+  background-image: url('../Images/arrow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 0;
+}
+
+/* Position each arrow */
+.arrow-beach {
+  left: 25%;
+  top: 32%;
+  transform: rotate(-30deg);
+}
+
+.arrow-notes {
+  right: 23%;
+  top: 32%;
+  transform: rotate(30deg);
+}
+
+.arrow-coding {
+  left: 24%;
+  top: 57%;
+  transform: rotate(-60deg);
+}
+
+.arrow-coffee {
+  right: 22%;
+  top: 57%;
+  transform: rotate(60deg);
+}
+
+.arrow-weather {
+  left: 48%;
+  top: 74%;
+  transform: rotate(90deg);
+}
+
+.arrow-shopping {
+  right: 18%;
+  top: 68%;
+  transform: rotate(20deg);
+}
+
+.skills-container {
+  width: 100%;
+  min-height: 50vh;
+  background: url('../Images/lightbackground.svg') center/cover repeat;
+  text-align: center;
+  padding: 60px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Title */
+.skills-title {
+ font-size: 128px;
+  font-family: "Comforter", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Section */
+.section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Icons row */
+.icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.icons-row img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.icons-row img:hover {
+  transform: scale(1.15);
+}
+
+
+/* MAIN WRAPPER WITH TEXTURE BACKGROUND */
+.contact-wrapper {
+  font-family: "Poppins", sans-serif;
+  padding: 40px;
+  text-align: center;
+
+  /* background texture image */
+background-image: url('../Images/lightbackground.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  min-height: 100vh;
+}
+
+/* heading */
+.title {
+  font-family: "Pacifico", cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 1.2s ease;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease;
+}
+
+/* FORM BOX */
+.form-container {
+  margin: auto;
+  max-width: 900px;
+  padding: 30px;
+  /* background: rgba(255, 255, 255, 0.65); */
+  backdrop-filter: blur(3px);
+
+  border: 6px dashed #555;
+  border-radius: 20px;
+
+  animation: borderWiggle 2.8s infinite ease-in-out;
+}
+
+/* inputs */
+.row {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  background: #2f2f2f55;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+textarea {
+  height: 150px;
+  margin-top: 20px;
+  resize: none;
+}
+
+/* requirement buttons */
+.tags {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: left;
+}
+
+.tags button {
+  background: #888;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.tags button:hover {
+  background: #444;
+  transform: scale(1.05);
+}
+
+/* submit button */
+.submit-btn {
+  margin-top: 20px;
+  padding: 12px 40px;
+  background: #2f2f2f;
+}
+.icong{
+    padding-top: 5%;
+}
+
+.hero-contact {
+  width: 89%;
+  min-height: 20vh;
+  padding: 60px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  /* dark textured background */
+  background-image: url("../Images/darkbackground.svg");
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+  position: relative;
+
+  animation: fadeIn 1.4s ease;
+}
+
+/* LEFT CONTENT */
+.hero-left {
+  max-width: 60%;
+  animation: slideUp 1.6s ease;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* MAIN SIGNATURE NAME */
+.main-name {
+  font-family: "Pacifico", cursive;
+  font-size: 8vw;
+  color: white;
+  line-height: 0.9em;
+  text-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+  animation: floatName 4s ease-in-out infinite;
+}
+
+/* OPTIONAL emphasis for second name */
+.main-name span {
+  display: inline-block;
+}
+
+/* RIGHT SECTION */
+.hero-right {
+  text-align: left;
+  margin-top: 20px;
+  animation: fadeInRight 1.6s ease;
+}
+
+.hero-right h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.hero-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-right ul li {
+  margin: 10px 0;
+  opacity: 0.85;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.hero-right ul li:hover {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* subtle floating animation for signature text */
+@keyframes floatName {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-contact {
+    flex-direction: column;
+    padding: 50px 30px;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .main-name {
+    font-size: 16vw;
+  }
+
+  .hero-right {
+    margin-top: 40px;
+  }
 }
