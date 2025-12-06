@@ -22,6 +22,7 @@ import icong from '../Images/icong.svg';
 import graphic from "../Images/graphic.png" ;
 import ui from '../Images/ux/ui.png';
 import web from '../Images/web programming.png';
+import Footer from "../Components/Footer";
 
 
 
@@ -221,37 +222,7 @@ className="center-image"
       </div>
     </div>
 
-
-<section className="hero-contact">
-      <div className="hero-left">
-        <p className="description">
-          I’m always open to meaningful conversations, creative collaborations,
-          or new opportunities. Don’t hesitate to drop me a message — I’d love
-          to hear from you.
-        </p>
-
-        <BlurText
-  text="Partinia Boktor"
-  delay={200}
-  animateBy="letters"
-  direction="top"
-  onAnimationComplete={handleAnimationComplete}
-  className="text-2xl mb-8"
-/>
-        
-      </div>
-
-      <div className="hero-right">
-        <h3>More Information :</h3>
-        <ul>
-          <li>Blog</li>
-          <li>Activities</li>
-          <li>Gallery</li>
-        </ul>
-      </div>
-    </section>
-
-
+<Footer />
     </>
   );
 };
