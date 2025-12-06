@@ -10,12 +10,16 @@ import img4 from '../Images/myimg4.png'
 import img5 from '../Images/myimg5.png'
 import img6 from '../Images/myimg6.png'
 import img7 from '../Images/myimg7.png'
+import img8 from '../Images/myimg8.png'
+import Footer from "../Components/Footer";
+
 
 const About = () => {
   const handleAnimationComplete = () => {
     console.log("Animation finished");
   };
 
+  
   return (
     <>
       <Nav />
@@ -92,6 +96,8 @@ const About = () => {
 <p className="desc">Egypt University of Informatics - Digital arts and designs</p>
 </div>
 </div>
+<div className="myimg" ><img src={img8} alt="" /></div>
+
 </div>
 
 
@@ -100,20 +106,15 @@ const About = () => {
 <h1 className="about-text bottom">About</h1>
 
 
-<div className="images-row">
-<div className="circle"><img src={img1} alt="" /></div>
-<div className="circle"><img src={img2} alt="" /></div>
-<div className="circle"><img src={img3} alt="" /></div>
-<div className="circle"><img src={img4} alt="" /></div>
-<div className="circle"><img src={img5} alt="" /></div>
-<div className="circle"><img src={img6} alt="" /></div>
-<div className="circle"><img src={img7} alt="" /></div>
+
 
 </div>
-</div>
+
 </div>
 
 
+
+<Footer />
 
 
 

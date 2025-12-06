@@ -228,3 +228,6 @@ font-size: 24px;
   height: 100%;
   object-fit: cover;
 }
+.myimg{
+   margin: 0 auto;
+}
