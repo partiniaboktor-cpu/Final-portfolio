@@ -19,6 +19,9 @@ import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
 import '../Animations/LogoLoop';
 import DecryptedText from '../Animations/DecryptedText';
 import icong from '../Images/icong.svg';
+import graphic from "../Images/graphic.png" ;
+import ui from '../Images/ux/ui.png';
+import web from '../Images/web programming.png';
 
 
 
@@ -66,7 +69,6 @@ className="center-image"
 
 
 </div>
-
 
 
 <div className="icon beach"></div>
@@ -125,6 +127,46 @@ className="center-image"
 <WorkCard image="/webdev.png" title="Web development" />
 </div>
 </div> */}
+
+
+<section className="what-container">
+    <BlurText
+  text="What i do ?"
+  delay={200}
+  animateBy="letters"
+  direction="top"
+  onAnimationComplete={handleAnimationComplete}
+  className="text-2xl mb-8"
+/>
+
+      <div className="cards">
+        {/* Card 1 */}
+        <div className="card">
+          <div className="card-img-wrap">
+            <img src={graphic} alt="Graphic design" />
+          </div>
+          <p className="card-label">Graphic design</p>
+        </div>
+
+        {/* Card 2 */}
+        <div className="card">
+          <div className="card-img-wrap">
+            <img src={ui} alt="UI/UX" />
+          </div>
+          <p className="card-label">UI/UX</p>
+        </div>
+
+        {/* Card 3 */}
+        <div className="card">
+          <div className="card-img-wrap">
+            <img src={web} alt="Web development" />
+          </div>
+          <p className="card-label">Web development</p>
+        </div>
+      </div>
+    </section>
+
+
 
 
 <div className="contact-wrapper">
