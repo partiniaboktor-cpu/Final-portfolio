@@ -1,6 +1,6 @@
 /* Background texture */
 .blogs-section {
-  /* background: url("/Images/lightbackground.svg"); */
+  background: url("../Images/lightbackground.svg");
   background-size: cover;
   padding: 60px 0;
 }
@@ -83,4 +83,37 @@
 
 .read-btn:hover {
   background: #e0e0e0;
+}
+
+.blog-card {
+  position: relative;
+  height: 330px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover pop-up */
+.blog-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.25);
+}
+
+/* Also animate overlay to darken more */
+.blog-card:hover .overlay {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Also animate title + button slightly upward */
+.blog-card:hover .blog-title {
+  transform: translateY(-5px);
+  transition: 0.35s ease;
+}
+
+.blog-card:hover .read-btn {
+  transform: translateY(-5px);
+  transition: 0.35s ease;
 }

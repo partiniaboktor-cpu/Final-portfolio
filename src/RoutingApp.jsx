@@ -5,6 +5,7 @@ import About from './Pages/About';
 import Categories from './Pages/Categories';
 import Contact from './Pages/Contact';
 import Blogs from './Pages/Blogs';
+import Blogsdetail from './Pages/Blogsdetail';
 
 const RoutingApp = () => {
     return ( <>
@@ -17,6 +18,7 @@ const RoutingApp = () => {
         <Route path='/categories' element={<Categories />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/blogs' element={<Blogs />} />
+        <Route path='/blogsdetail' element={<Blogsdetail />} />
 
       </Routes>
     </BrowserRouter>
