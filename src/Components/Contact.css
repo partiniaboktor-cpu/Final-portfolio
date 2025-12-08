@@ -1,0 +1,125 @@
+/* MAIN WRAPPER WITH WHITE TEXTURE */
+.contact-wrapper {
+  background: url("../Images/lightbackground.svg");
+  background-size: cover;
+  padding: 80px 0;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* TITLE */
+.contact-title {
+  font-family: "Comforter", cursive;
+  font-size: 70px;
+  margin-bottom: 40px;
+}
+
+/* BLACK TEXTURE CARD */
+.contact-card {
+  width: 85%;
+  margin: auto;
+  background: url("../Images/darkbackground.svg");
+  background-size: cover;
+  padding: 50px 60px;
+  border-radius: 25px;
+  display: flex;
+  position: relative;
+  color: white;
+  gap: 40px;
+}
+
+/* PINK STAR */
+.contact-star {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  width: 80px;
+  z-index: 10;
+}
+
+/* LEFT SIDE */
+.contact-left {
+  width: 40%;
+  text-align: left;
+}
+
+.contact-small-text {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.send-it {
+  font-family: "Comforter", cursive;
+  font-size: 100px;
+  line-height: 70px;
+  margin: 10px 0 30px 0;
+}
+
+.contact-description {
+  width: 85%;
+  line-height: 1.6;
+  opacity: 0.8;
+  font-size: 16px;
+  padding-top: 5%;
+}
+
+/* RIGHT SIDE FORM */
+.contact-right {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.contact-right label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.contact-right input,
+.contact-right textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* CHECKBOX ROW */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  margin: 15px 0 25px 0;
+  gap: 2px;
+}
+
+.checkbox-row p {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* BUTTON */
+.send-btn {
+  width: 140px;
+  padding: 12px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-size: 15px;
+  margin-top: 5%;
+}
+
+.send-btn:hover {
+  background: #e3e3e3;
+}

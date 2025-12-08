@@ -43,11 +43,11 @@ text-align: center;
   left: 15%;
   top: 25%;
   width: 10%;
-  height: 15%;
+  height: 21%;
 }
 
 .notes {
-  background-image: url('../Images/icon2.svg');
+  background-image: url('../Images/icon6.svg');
   right: 15%;
   top: 25%;
     width: 10%;
@@ -55,23 +55,23 @@ text-align: center;
 }
 
 .coding {
-  background-image: url('../Images/icon3.svg');
+  background-image: url('../Images/icon2.svg');
   left: 15%;
   top: 65%;
     width: 10%;
-  height: 15%;
+  height: 20%;
 }
 
 .coffee {
-  background-image: url('../Images/icon4.svg');
+  background-image: url('../Images/icon5.svg');
   right: 10%;
   top: 55%;
     width: 10%;
-  height: 15%;
+  height: 20%;
 }
 
 .weather {
-  background-image: url('../Images/icon5.svg');
+  background-image: url('../Images/icon3.svg');
   left: 38%;
   top: 83%;
     width: 10%;
@@ -79,11 +79,11 @@ text-align: center;
 }
 
 .shopping {
-  background-image: url('../Images/icon6.svg');
+  background-image: url('../Images/icon4.svg');
   right: 20%;
   top: 78%;
     width: 10%;
-  height: 15%;
+  height: 20%;
 }
 
 .arrow {
@@ -191,7 +191,7 @@ text-align: center;
   text-align: center;
 
   /* background texture image */
-background-image: url('../Images/lightbackground.svg');
+background-image: url('../Images/darkbackground.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -444,7 +444,7 @@ textarea {
   padding: 12px;
   background: white;
   border-radius: 40px;
-  clip-path: path("M20,0 Q30,20 40,0 T80,0 T120,0 T160,0 T200,0 V140 Q190,160 180,140 T140,140 T100,140 T60,140 T20,140 Z");
+  /* clip-path: path("M20,0 Q30,20 40,0 T80,0 T120,0 T160,0 T200,0 V140 Q190,160 180,140 T140,140 T100,140 T60,140 T20,140 Z"); */
   /* Approx scalloped shape */
   overflow: hidden;
   width: 260px;

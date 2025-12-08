@@ -1,0 +1,86 @@
+/* Background texture */
+.blogs-section {
+  /* background: url("/Images/lightbackground.svg"); */
+  background-size: cover;
+  padding: 60px 0;
+}
+
+.blogs-title {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.blogs-grid {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.blog-card {
+  position: relative;
+  height: 330px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Large bottom card */
+.blog-card.large {
+  grid-column: span 2;
+  height: 400px;
+}
+
+/* DARK OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+/* Chat bubble icon */
+.icon-bubble {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 35px;
+  color: white;
+  z-index: 2;
+}
+
+/* TITLE */
+.blog-title {
+  position: absolute;
+  bottom: 90px;
+  left: 25px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  max-width: 80%;
+  z-index: 2;
+}
+
+/* BUTTON */
+.read-btn {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  padding: 10px 20px;
+  border: none;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.2s;
+}
+
+.read-btn:hover {
+  background: #e0e0e0;
+}

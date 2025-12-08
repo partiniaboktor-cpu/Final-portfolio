@@ -23,6 +23,7 @@ import graphic from "../Images/graphic.png" ;
 import ui from '../Images/ux/ui.png';
 import web from '../Images/web programming.png';
 import Footer from "../Components/Footer";
+import Contact from "../Components/Contact";
 
 
 
@@ -118,109 +119,8 @@ className="center-image"
 
     </div>
 
-{/* <div className="what-section">
-<SectionTitle text="What I do ?" />
 
-
-<div className="work-cards-container">
-<WorkCard image="/graphic.png" title="Graphic design" />
-<WorkCard image="/uxui.png" title="UX/UI" />
-<WorkCard image="/webdev.png" title="Web development" />
-</div>
-</div> */}
-
-
-<section className="what-container">
-    <BlurText
-  text="What i do ?"
-  delay={200}
-  animateBy="letters"
-  direction="top"
-  onAnimationComplete={handleAnimationComplete}
-  className="text-2xl mb-8"
-/>
-
-      <div className="cards">
-        {/* Card 1 */}
-        <div className="card">
-          <div className="card-img-wrap">
-            <img src={graphic} alt="Graphic design" />
-          </div>
-          <p className="card-label">Graphic design</p>
-        </div>
-
-        {/* Card 2 */}
-        <div className="card">
-          <div className="card-img-wrap">
-            <img src={ui} alt="UI/UX" />
-          </div>
-          <p className="card-label">UI/UX</p>
-        </div>
-
-        {/* Card 3 */}
-        <div className="card">
-          <div className="card-img-wrap">
-            <img src={web} alt="Web development" />
-          </div>
-          <p className="card-label">Web development</p>
-        </div>
-      </div>
-    </section>
-
-
-
-
-<div className="contact-wrapper">
-     <BlurText
-  text="Let's get in touch together"
-  delay={200}
-  animateBy="letters"
-  direction="top"
-  onAnimationComplete={handleAnimationComplete}
-  className="text-2xl mb-8"
-/>
-
-      <DecryptedText
-      text="Whenever , Wherever were meant to work together! "
-      speed={50}
-      maxIterations={20}
-      characters="ABCD1234!?"
-      className="revealed"
-      parentClassName="all-letters"
-      encryptedClassName="encrypted"
-      />
-
-      <div className="form-container">
-        <h3>Contact with me</h3>
-
-        <div className="row">
-          <input type="text" placeholder="First name" />
-          <input type="text" placeholder="Last name" />
-        </div>
-
-        <div className="row">
-          <input type="email" placeholder="Email" />
-          <input type="text" placeholder="Phone" />
-        </div>
-
-        <h3>Your requirement</h3>
-
-        <div className="tags">
-          <button>Website</button>
-          <button>Graphics</button>
-          <button>Front-end development</button>
-          <button>Website</button>
-        </div>
-
-        <textarea placeholder="How can I help ?" />
-
-        <button className="submit-btn">Submit</button>
-      </div>
-
-      <div className="icons">
-       <img className="icong" src={icong} alt="" />
-      </div>
-    </div>
+<Contact />
 
 <Footer />
     </>
