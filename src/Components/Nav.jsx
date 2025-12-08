@@ -15,7 +15,9 @@ const Navbar = () => {
 </Link>
 
       <ul className="nav-linkss">
-        <li>About me</li>
+      <li>
+    <Link to="/About">About Me</Link>
+  </li>
         <li>Categories</li>
         <li>Blog</li>
         <li>Contact</li>
