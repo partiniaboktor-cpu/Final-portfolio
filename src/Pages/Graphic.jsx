@@ -2,7 +2,6 @@ import React from 'react';
 import Nav from '../Components/Nav';
 import Footer from '../Components/Footer';
 import BlurText from "../Animations/BlurText";
-import BounceCards from '../Animations/Bouncecards';
 import shadia from '../Images/shadia.png';
 import fontposter from '../Images/fontposter.png';
 import CircularGallery from '../Animations/CircularGallery'
