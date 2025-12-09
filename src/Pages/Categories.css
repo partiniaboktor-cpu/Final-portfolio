@@ -70,3 +70,7 @@
   opacity: 1;
   transform: translate(-50%, 0);
 }
+.graphic-link{
+  text-decoration: none;
+  color: #222222;
+}

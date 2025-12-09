@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import "./Categories.css";
 import WhiteNav from "../Components/WhiteNav";
@@ -57,6 +58,7 @@ const Categories = () => {
 
 <div className="category-cards-sec">
 
+<Link className="graphic-link" to="/graphic">
   <div className="card-text">
     <div className="img-wrapper">
       <img src={graphics} alt="graphic" />
@@ -64,6 +66,7 @@ const Categories = () => {
     </div>
     <p className="name-text">Graphic design</p>
   </div>
+</Link>
 
   <div className="card-text">
     <div className="img-wrapper">
