@@ -26,7 +26,7 @@ const handleAnimationComplete = () => {
   className="text-2xl mb-8"
 />
 
-<img className="star" src={star} alt="" />
+{/* <img className="star" src={star} alt="" /> */}
         <div className="hero-details">
              <div className="backportfolio">
           <img src={myImg} alt="me" className="hero-img" />
@@ -42,7 +42,7 @@ const handleAnimationComplete = () => {
             <h3 className="role2">& Graphic Designer</h3>
           </div>
         </div>
-{/* <img className="star2" src={star} alt="" /> */}
+<img className="star2" src={star} alt="" />
 
 <DecryptedText
 text="Bringing your product’s future glow-up from imagination to interface. "
