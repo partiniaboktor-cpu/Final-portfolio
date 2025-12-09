@@ -56,7 +56,9 @@ const Blogs = () => {
 
             <h2 className="blog-title">{blog.title}</h2>
 
-            <button className="read-btn">Read more</button>
+          <a href="/blogsdetail" className="read-link">
+         <button className="read-btn">Read more</button>
+         </a>
           </div>
         ))}
       </div>

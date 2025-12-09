@@ -5,11 +5,13 @@
   justify-content: center;
   align-items: center;
   padding: 25px 40px;
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   top: 0;
   z-index: 10;
   gap: 55%;
+  position: fixed;
+
 }
 
 .logo {

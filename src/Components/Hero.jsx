@@ -18,7 +18,7 @@ const handleAnimationComplete = () => {
 
 
 <BlurText
-  text="Portfolio"
+  text="My Visual Space"
   delay={200}
   animateBy="letters"
   direction="top"

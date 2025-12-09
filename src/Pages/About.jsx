@@ -12,6 +12,26 @@ import img6 from '../Images/myimg6.png'
 import img7 from '../Images/myimg7.png'
 import img8 from '../Images/myimg8.png'
 import Footer from "../Components/Footer";
+import ImageTrail from '../Animations/Imagetrail'
+import photo1 from '../Images/photo1.png' ;
+import photo2 from '../Images/photo2.png' ;
+import photo3 from '../Images/photo3.png' ;
+import photo4 from '../Images/photo4.png' ;
+import photo5 from '../Images/photo5.png' ;
+import photo6 from '../Images/photo6.png' ;
+import photo7 from '../Images/photo7.png' ;
+import photo8 from '../Images/photo8.png' ;
+import photo9 from '../Images/photo9.png' ;
+import photo10 from '../Images/photo10.png' ;
+import photo11 from '../Images/photo11.png' ;
+import photo12 from '../Images/photo12.png' ;
+import photo13 from '../Images/photo13.png' ;
+import photo14 from '../Images/photo14.png' ;
+import photo15 from '../Images/photo15.png' ;
+import photo16 from '../Images/photo16.png' ;
+import photo17 from '../Images/photo17.png' ;
+import ScrollReveal from '../Animations/Scrollreveal';
+
 
 
 const About = () => {
@@ -96,7 +116,52 @@ const About = () => {
 <p className="desc">Egypt University of Informatics - Digital arts and designs</p>
 </div>
 </div>
-<div className="myimg" ><img src={img8} alt="" /></div>
+
+<BlurText
+            text="More of me"
+            delay={200}
+            animateBy="letters"
+            direction="top"
+            onAnimationComplete={handleAnimationComplete}
+            className="text-2xl mb-8"
+          />
+<ScrollReveal
+  baseOpacity={0}
+  enableBlur={true}
+  baseRotation={5}
+  blurStrength={10}
+  className="hover"
+>
+  ⭐ “Move your cursor to uncover my story”
+</ScrollReveal>
+
+<div style={{ height: '500px', position: 'relative', overflow: 'hidden , width: 100%' }}>
+  <ImageTrail
+    items={[
+      photo1,
+      photo2 ,     
+      photo3,
+      photo4,
+      photo5,
+      photo6,
+      photo7,
+      photo8,
+      photo9,
+      photo10,
+      photo11,
+      photo12,
+      photo13,
+      photo14,
+      photo15,
+      photo16,
+      photo17,
+
+
+
+    ]}
+    variant={1}
+  />
+</div>
 
 </div>
 
