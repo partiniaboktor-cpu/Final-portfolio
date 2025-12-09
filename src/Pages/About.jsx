@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../Components/WhiteNav";
+import WhiteNav from "../Components/WhiteNav";
 import "./About.css";
 import myImg from "../Images/myImg.png";
 import BlurText from "../Animations/BlurText";
@@ -22,7 +22,7 @@ const About = () => {
   
   return (
     <>
-      <Nav />
+      <WhiteNav />
 
       <div className="hero">
         <div className="hero-left">

@@ -25,6 +25,10 @@
   font-size: 18px;
   cursor: pointer;
   color: #000000;
-  text-decoration: none;
-}
 
+}
+.linkkks{
+  text-decoration: none;
+  color: #222222;
+  cursor: pointer;
+}

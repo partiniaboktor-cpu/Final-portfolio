@@ -16,11 +16,20 @@ const Navbar = () => {
 
       <ul className="nav-linkss">
       <li>
-    <Link to="/About">About Me</Link>
+    <Link className="linkkks" to="/About">About Me</Link>
   </li>
-        <li>Categories</li>
-        <li>Blog</li>
-        <li>Contact</li>
+
+              <li>
+    <Link className="linkkks" to="/categories">Categories</Link>
+  </li>
+
+                     <li>
+    <Link className="linkkks" to="/blogs">Blog</Link>
+  </li>
+
+                           <li>
+    <Link className="linkkks" to="/contact">Contact</Link>
+  </li>
       </ul>
     </nav>
   );
