@@ -1,12 +1,14 @@
-import React, { useRef } from "react";
+import React, { Component, useEffect, useState, useRef } from "react";
 import "./Blogsdetail.css";
 import blogss from "../Images/blogss.png";
 import paperTexture from "../Images/lightbackground.svg";
 import star from "../Images/star.svg";
-import Footer from '../Components/Footer'
-import Nav from '../Components/Nav'
+import Footer from "../Components/Footer";
+import Nav from "../Components/Nav";
 import BlurText from "../Animations/BlurText";
-import VariableProximity from '../Animations/Variable Proximity';
+import VariableProximity from "../Animations/Variable Proximity";
+import { supabase } from "../Supabase";
+
 
 
 
@@ -17,6 +19,27 @@ export default function Blogs() {
      const handleAnimationComplete = () => {
     console.log("Animation finished");
   };
+
+const [Blog, setProjects] = useState ([{ 
+   Question:"",
+   Description:""
+}
+]);
+useEffect(()=>{
+
+ async function callGetApi(){
+
+    const Blogapi = await supabase.from("Blog").select("*");
+    setProjects(Blogapi.data)
+    
+}
+
+
+callGetApi();
+},[]);
+
+
+
   return (
 
     <>
@@ -38,6 +61,9 @@ export default function Blogs() {
       {/* Decoration Right */}
   
 
+    
+
+
       <div className="blogs-cards" style={{ backgroundImage: `url(${blogss})` }}>
         <div className="cards-overlay">
           <div
@@ -45,7 +71,7 @@ ref={containerRef}
 style={{position: 'relative'}}
 >
   <VariableProximity
-    label={' Recommended Designers near Nasr City '}
+    label={Blog[0].Question}
     className={'variable-proximity-demo'}
     fromFontVariationSettings="'wght' 400, 'opsz' 9"
     toFontVariationSettings="'wght' 1000, 'opsz' 40"
@@ -69,12 +95,8 @@ style={{position: 'relative'}}
           </p>
 
           <p className="cards-texts">
-            Most UX/UI Designers can have many skills from their field such as 
-            wireframing, prototyping, user research, enabling them to design 
-            responsive layouts that prioritize user experience. Also, other tools 
-            for skills such as Adobe Illustrator, Adobe Premiere, Adobe Photoshop, 
-            Figma, FigJam, After Effects, Blender. The more the skills the more the 
-            professional designer.
+                    {Blog[0].Description}
+
           </p>
         </div>
       </div>

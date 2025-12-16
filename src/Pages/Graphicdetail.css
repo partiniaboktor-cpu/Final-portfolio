@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.project-section7 {
+  min-height: 100vh;
+  padding: 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Back link top */
+.back-top7 {
+  position: absolute;
+  top: 30px;
+  right: 80px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+/* Title */
+.title7 {
+  text-align: center;
+  font-size: 72px;
+  font-family: "Brush Script MT", cursive;
+  margin-bottom: 60px;
+  color: #ffffff;
+}
+
+/* Layout */
+.content7 {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left */
+.left7 {
+  max-width: 480px;
+}
+
+.overview-title7,
+.tools-title7 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.text7 {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* Tools */
+.tool7 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ai7 {
+  background: #3b0f0f;
+  color: #ff9a00;
+  font-weight: bold;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+/* Center image */
+.center7 {
+  display: flex;
+  justify-content: center;
+}
+
+.image7 {
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Right */
+.right7 {
+  font-size: 20px;
+}
+
+.info7 {
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.info7 strong {
+  font-size: 26px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mockups-section7 {
+  min-height: 100vh;
+  padding: 90px 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Title */
+.mockups-title7 {
+  font-family: "Brush Script MT", cursive;
+  font-size: 68px;
+  color: #333;
+  margin-bottom: 70px;
+}
+
+/* Grid */
+.mockups-grid7 {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mockup cards */
+.mockup-card7 img {
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease;
+}
+
+.mockup-card7 img:hover {
+  transform: scale(1.04);
+}

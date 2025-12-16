@@ -7,6 +7,8 @@ import Contact from './Pages/Contact';
 import Blogs from './Pages/Blogs';
 import Blogsdetail from './Pages/Blogsdetail';
 import Graphic from './Pages/Graphic';
+import Test from './Pages/Test';
+import Graphicdetail from './Pages/Graphicdetail';
 
 const RoutingApp = () => {
     return ( <>
@@ -21,6 +23,8 @@ const RoutingApp = () => {
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/blogsdetail' element={<Blogsdetail />} />
         <Route path='/graphic' element={<Graphic />} />
+        <Route path='/graphicdetail1' element={<Graphicdetail />} />
+        <Route path='/test' element={<Test />} />
 
       </Routes>
     </BrowserRouter>
