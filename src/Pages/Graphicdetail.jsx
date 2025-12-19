@@ -7,13 +7,71 @@ import BlurText from "../Animations/BlurText";
 import shadia2 from '../Images/shadia2.png' ;
 import whitetexture from '../Images/lightbackground.svg' ;
 import Footer from '../Components/Footer';
+import { useParams } from 'react-router-dom';
+import fontposter from '../Images/fontposter.png';
+import fontposter2 from '../Images/fontposter2.png';
+import idcard from '../Images/idcard.png';
+import idcard2 from '../Images/idcard2.png';
+import tea from '../Images/tea.png';
 
 const Graphicdetail = () => {
+   const details = {
+  "01": {
+    title: "Shadia poster",
+    description:
+      "The Shadia Coloring Poster is a digitally illustrated artwork created using Adobe Illustrator, designed to transform a real image of Shadia into a stylized, line-art composition suitable for coloring." ,
+    img: "shadia",
+    scope: "Posters",
+    timeframe: "3 weeks",
+    mockup1: shadia,
+    mockup2: shadia2
+  },
+  "02":{
+    title:"Font name poster",
+    description:"The Font Name Poster is a typographic design project created to highlight and celebrate a chosen typeface through a clean, modern, and visually impactful layout. The poster focuses on showcasing the font’s unique characteristics—such as its personality, structure, style, and versatility—while maintaining strong visual hierarchy and aesthetic balance.",
+    img: fontposter ,
+    scope: "Posters",
+    timeframe: "3 weeks",
+    mockup1: fontposter ,
+    mockup2: fontposter2 
+  },
+ "03":{
+    title:"Id-Cards ",
+    description:"The ID Cards Design project focuses on creating clean, functional, and visually cohesive identification cards that represent the brand’s identity with clarity and professionalism. The goal was to design ID cards that balance aesthetics with practicality, ensuring that essential information is easy to read while maintaining a strong visual presence aligned with the organization’s style guidelines.",
+    img: idcard ,
+    scope: "ID-cards",
+    timeframe: "3 weeks",
+    mockup1: idcard2 ,
+    mockup2: idcard 
+  },
+ "04":{
+    title:"Shay-el arousa rebranding",
+    description:"The stationery design for Shay El Arousa was developed as part of a cohesive rebranding process that reflects the brand’s heritage, warmth, and artisanal quality. The visual system balances traditional influences with a modern aesthetic, using refined typography, earthy tones, and subtle decorative elements inspired by tea culture.",
+    img: tea ,
+    scope: "Posters",
+    timeframe: "3 weeks",
+    mockup1: "fontposter" ,
+    mockup2: "fontposter2" 
+  }
+
+
+
+};
+
+
+    let {id}= useParams ();
+
+
 
 
     const handleAnimationComplete = () => {
     console.log("Animation finished");
   };
+
+
+
+
+
     return ( <>
     
     <WhiteNav />
@@ -30,7 +88,7 @@ const Graphicdetail = () => {
     
 
    <BlurText
-        text="Shadia poster"
+        text={details[id].title}
         delay={200}
         animateBy="letters"
         direction="top"
@@ -43,12 +101,7 @@ const Graphicdetail = () => {
         <div className="left7">
           <h2 className="overview-title7">- Project overview</h2>
           <p className="text7">
-            The Shadia Coloring Poster is a digitally illustrated artwork created
-            using Adobe Illustrator, designed to transform a real image of
-            Shadia into a stylized, line-art composition suitable for coloring.
-            The project focuses on simplifying complex visual details while
-            preserving character identity, resulting in a clean, balanced, and
-            visually engaging coloring poster.
+            {details[id].description}
           </p>
 
           <h2 className="tools-title7">2- Tools i used</h2>
@@ -79,13 +132,13 @@ const Graphicdetail = () => {
           <p className="info7">
             <strong>4- Scope</strong>
             <br />
-            Posters
+            {details[id].scope}
           </p>
 
           <p className="info7">
             <strong>5- Time-frame</strong>
             <br />
-            3 weeks
+            {details[id].timeframe}
           </p>
         </div>
       </div>
@@ -106,11 +159,11 @@ const Graphicdetail = () => {
 
       <div className="mockups-grid7">
         <div className="mockup-card7">
-          <img src={shadia} alt="Mockup dark version" />
+          <img src={details[id].mockup1} alt="Shadia mockup" />
         </div>
 
         <div className="mockup-card7">
-          <img src={shadia2} alt="Mockup color version" />
+          <img src={details[id].mockup2} alt="Shadia mockup" />
         </div>
       </div>
     </section>

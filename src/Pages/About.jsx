@@ -1,16 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import WhiteNav from "../Components/WhiteNav";
 import "./About.css";
 import myImg from "../Images/myImg.png";
 import BlurText from "../Animations/BlurText";
-import img1 from '../Images/myimg1.png'
-import img2 from '../Images/myimg2.png'
-import img3 from '../Images/myimg3.png'
-import img4 from '../Images/myimg4.png'
-import img5 from '../Images/myimg5.png'
-import img6 from '../Images/myimg6.png'
-import img7 from '../Images/myimg7.png'
-import img8 from '../Images/myimg8.png'
 import Footer from "../Components/Footer";
 import ImageTrail from '../Animations/Imagetrail'
 import photo1 from '../Images/photo1.png' ;
@@ -31,6 +23,7 @@ import photo15 from '../Images/photo15.png' ;
 import photo16 from '../Images/photo16.png' ;
 import photo17 from '../Images/photo17.png' ;
 import ScrollReveal from '../Animations/Scrollreveal';
+import { supabase } from "../Supabase";
 
 
 
@@ -39,6 +32,23 @@ const About = () => {
     console.log("Animation finished");
   };
 
+  const [loading, setLoading] = useState(true);
+const [profile, setprofile] = useState("") ;
+
+
+useEffect(()=>{
+
+ async function getAllprofileAPI(){
+  const res = await supabase.from("profile").select("*");
+  setprofile(res.data);
+  // console.log(res.data);
+    setLoading(false);
+}
+getAllprofileAPI();
+
+},[]);
+
+if (loading) return <p>Loading...</p>;
   
   return (
     <>
@@ -63,24 +73,36 @@ const About = () => {
             onAnimationComplete={handleAnimationComplete}
             className="text-2xl mb-8"
           />
-
+{
+profile.map((profile)=>{
+return  <>
           <p className="hero-text">
-            Highly motivated and creative Entry Level Web Designer with a strong
-            passion for creating visually appealing and user-friendly websites.
-            Skilled in responsive design, wireframing, and optimizing website
-            performance to drive increased traffic and conversion rates.
+           {profile.Bio}
           </p>
 
+</>
+})
+}
           <div className="stars star2">✦</div>
         </div>
 
         <div className="hero-right">
           <div className="img-wrapper">
-
-            <img src={myImg} alt="Partinia" className="heros-img" />
-
+{
+profile.map((profile)=>{
+return  <>
+            <img src={profile.img} alt="Partinia" className="heros-img" />
+</>
+})
+}
             <span className="tag date">24 March 2005</span>
-            <span className="tag city">Cairo, Egypt</span>
+            {
+profile.map((profile)=>{
+return  <>
+            <span className="tag city">{profile.location}</span>
+            </>
+})
+}
           </div>
 
           <div className="stars star1">✦</div>
@@ -107,6 +129,7 @@ const About = () => {
 <p className="desc">Saint Fatima language school - IGCSE</p>
 </div>
 </div>
+
 
 
 <div className="timeline-item">

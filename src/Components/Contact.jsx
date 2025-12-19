@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 import star from "../Images/star.svg"; // your pink star
 import BlurText from "../Animations/BlurText";
+import { supabase } from '../Supabase';
+
 
 const Contact = () => {
 
-         const handleAnimationComplete = () => {
+    const handleAnimationComplete = () => {
     console.log("Animation finished");
   };
+
+ const [Name , setName] = useState("");
+ const [email , setEmail] = useState("");
+ const [company, setcompany] = useState("");
+
+
+async function sendmsg(){
+  const res = await supabase.from("messages").insert({"Name":Name});
+
+}
+
 
   return (
     <div className="contact-wrapper">
@@ -41,23 +54,22 @@ const Contact = () => {
 
         <div className="contact-right">
           <label>Full name</label>
-          <input type="text" />
+          <input onChange={(i)=>{setName(i.target.value)}} type="text" />
 
           <label>Company</label>
-          <input type="text" />
+          <input onChange={(i)=>{setcompany(i.target.value)}} type="text" />
 
           <label>Email Address</label>
-          <input type="email" />
+          <input onChange={(i)=>{setEmail(i.target.value)}} type="email" />
 
           <label>Tell us about your project</label>
           <textarea rows="5"></textarea>
 
-         
+         {/* <button>send</button> */}
 
-          <button className="send-btn">Send message</button>
+          <button onClick={sendmsg} className="send-btn">Send message</button>
         </div>
       </div>
-
     </div>
   );
 };

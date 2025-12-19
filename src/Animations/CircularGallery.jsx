@@ -7,6 +7,8 @@ import fontposter from '../Images/fontposter.png' ;
 import idcard from '../Images/idcard.png' ;
 import tea from '../Images/tea.png' ;
 import game from '../Images/game.png' ;
+import { useNavigate } from 'react-router-dom';
+
 
 function debounce(func, wait) {
   let timeout;
@@ -109,12 +111,14 @@ class Media {
     scene,
     screen,
     text,
+    id, // ✅ ADD
     viewport,
     bend,
     textColor,
     borderRadius = 0,
     font
   }) {
+    this.id = id; // ✅ STORE ID
     this.extra = 0;
     this.geometry = geometry;
     this.gl = gl;
@@ -296,9 +300,11 @@ class App {
       borderRadius = 0,
       font = 'bold 30px Figtree',
       scrollSpeed = 2,
-      scrollEase = 0.05
+      scrollEase = 0.05,
+      onMediaClick // ✅ ADD
     } = {}
   ) {
+    this.onMediaClick = onMediaClick; // ✅ STORE
     document.documentElement.classList.remove('no-js');
     this.container = container;
     this.scrollSpeed = scrollSpeed;
@@ -336,17 +342,16 @@ class App {
       heightSegments: 50,
       widthSegments: 100
     });
+    
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
-    const defaultItems = [
-      { image: shadia, text: 'Shadia Poster' },
-      { image: idcard, text: 'Id-card' },
-      { image: fontposter, text: 'fontposter' },
-      { image: tea, text: 'Shay-el-arousa Rebranding' },
-      { image: game, text: 'Game rebranding' },
-
-    ];
-    const galleryItems = items && items.length ? items : defaultItems;
+const defaultItems = [
+  { id: '01', image: shadia, text: 'Shadia Poster' },
+  { id: '02', image: idcard, text: 'Id-card' },
+  { id: '03', image: fontposter, text: 'Fontposter' },
+  { id: '04', image: tea, text: 'Shay-el-arousa Rebranding' },
+  { id: '05', image: game, text: 'Game rebranding' },
+]; const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
     this.medias = this.mediasImages.map((data, index) => {
       return new Media({
@@ -359,6 +364,7 @@ class App {
         scene: this.scene,
         screen: this.screen,
         text: data.text,
+        id: data.id,
         viewport: this.viewport,
         bend,
         textColor,
@@ -378,10 +384,23 @@ class App {
     const distance = (this.start - x) * (this.scrollSpeed * 0.025);
     this.scroll.target = this.scroll.position + distance;
   }
-  onTouchUp() {
-    this.isDown = false;
-    this.onCheck();
-  }
+onTouchUp(e) {
+  this.isDown = false;
+  this.onCheck();
+
+  if (!this.onMediaClick) return;
+
+  const x = (e.clientX / this.screen.width) * 2 - 1;
+
+  this.medias.forEach(media => {
+    const left = media.plane.position.x - media.width / 2;
+    const right = media.plane.position.x + media.width / 2;
+
+    if (x > left && x < right && media.id) {
+      this.onMediaClick(media); // ✅ CLICK = LINK
+    }
+  });
+}
   onWheel(e) {
     const delta = e.deltaY || e.wheelDelta || e.detail;
     this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
@@ -464,11 +483,24 @@ export default function CircularGallery({
   scrollEase = 0.05
 }) {
   const containerRef = useRef(null);
+  const navigate = useNavigate(); // ✅ USE IT
+
   useEffect(() => {
-    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase });
-    return () => {
-      app.destroy();
-    };
-  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
+    const app = new App(containerRef.current, {
+      items,
+      bend,
+      textColor,
+      borderRadius,
+      font,
+      scrollSpeed,
+      scrollEase,
+      onMediaClick: (media) => {
+        navigate(`/graphic/${media.id}`); // ✅ ANCHOR LINK
+      }
+    });
+
+    return () => app.destroy();
+  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase, navigate]);
+
   return <div className="circular-gallery" ref={containerRef} />;
 }

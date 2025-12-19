@@ -23,7 +23,7 @@ const RoutingApp = () => {
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/blogsdetail' element={<Blogsdetail />} />
         <Route path='/graphic' element={<Graphic />} />
-        <Route path='/graphicdetail1' element={<Graphicdetail />} />
+        <Route path='/graphic/:id' element={<Graphicdetail />} />
         <Route path='/test' element={<Test />} />
 
       </Routes>

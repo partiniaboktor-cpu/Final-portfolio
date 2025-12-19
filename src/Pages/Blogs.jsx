@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Blogs.css";
 import Nav from '../Components/Nav';
 import BlurText from "../Animations/BlurText";
@@ -7,8 +7,11 @@ import blog1 from '../Images/blog1.png'
 import blog2 from '../Images/blog2.png'
 import blog3 from '../Images/blog3.png'
 import star from '../Images/star.svg'
+import { supabase } from "../Supabase";
 
 const blogsData = [
+
+
   {
     id: 1,
     title: "Recommended Designers near Nasr City",
@@ -30,6 +33,27 @@ const Blogs = () => {
     const handleAnimationComplete = () => {
     console.log("Animation finished");
   };
+
+
+
+const [loading, setLoading] = useState(true);
+const [Blog, setBlog] = useState("") ;
+
+useEffect(()=>{
+
+ async function getAllBlogAPI(){
+  const res = await supabase.from("Blog").select("*");
+  setBlog(res.data);
+  // console.log(res.data);
+    setLoading(false);
+}
+getAllBlogAPI();
+
+},[]);
+
+if (loading) return <p>Loading...</p>;
+
+
   return (
 <>
     <Nav />

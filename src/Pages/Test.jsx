@@ -1,61 +1,38 @@
-// import React, { Component, useEffect, useState } from 'react';
-// import { supabase } from '../Supabase';
+import React, { useEffect, useState } from 'react';
+import { supabase } from '../Supabase';
 
-// const Test = () => {
-// const [Projects, setProjects] = useState ([
+const Test = () => {
+  const [projects, setProjects] = useState([]);
 
-// {    title:"",
-//     category:[],
-//     Cover_image:"",
-//     date:"",
-//     Role:"",
-//     Tools:"",
-//     Project_overview:"",
-//     Project_overview:"",
-// }
-// ]);
-// useEffect(()=>{
+  useEffect(() => {
+    async function callGetApi() {
+      const { data, error } = await supabase
+        .from("Projects")
+        .select("*");
 
-//  async function callGetApi(){
+      if (!error) {
+        setProjects(data);
+      }
+    }
 
-//     const projectapi = await supabase.from("Projects").select("*");
-//     setProjects(projectapi.data)
-    
-// }
+    callGetApi();
+  }, []);
 
+  return (
+    <>
+      <p>123456789</p>
 
+      {/* Safe title access */}
+      <p>{projects[0]?.title}</p>
 
-// callGetApi();
-// },[]);
+      {/* Safe category mapping */}
+      {projects[0]?.category?.map((c, index) => (
+        <div key={index}>
+          <h1>{c}</h1>
+        </div>
+      ))}
+    </>
+  );
+};
 
-
-//     return (  <>
-    
-//     123456789
-    
-//     <p>
-//         {Projects[0].title}
-//     </p>
-    
-// {
-
-//     // console.log(Projects[0])
-// Projects[0].category.map((c)=>{
-//     return <h1>{c}</h1>
-
-// <div>
-
-// <p>{Image.alt}</p>
-// <img src={image.url} alt={image.alt} />
-
-// </div>
-
-// })
-// }
-
-
-    
-//     </>);
-// }
- 
-// export default Test;
+export default Test;
