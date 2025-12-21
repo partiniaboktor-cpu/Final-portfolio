@@ -83,7 +83,9 @@ const Categories = () => {
       <img src={photography} alt="photography" />
 
     </div>
+    <Link to="/photography">
     <p className="name-text">Photography</p>
+   </Link>
   </div>
 
   <div className="card-text">

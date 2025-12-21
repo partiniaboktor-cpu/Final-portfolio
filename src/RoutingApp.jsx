@@ -12,6 +12,7 @@ import Graphicdetail from './Pages/Graphicdetail';
 import Test from './Pages/Test';
 import UX from './Pages/Ux';
 import Uxdetail from './Pages/Uxdetail';
+import Photography from './Pages/Photography';
 
 const RoutingApp = () => {
   return (
@@ -28,6 +29,8 @@ const RoutingApp = () => {
         <Route path='/test' element={<Test />} />
         <Route path='/ux' element={<UX />} />
         <Route path='/uxdetail' element={<Uxdetail />} />
+        <Route path='/photography' element={<Photography />} />
+
       </Routes>
     </BrowserRouter>
   );
