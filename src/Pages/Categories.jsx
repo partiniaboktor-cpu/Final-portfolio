@@ -73,7 +73,9 @@ const Categories = () => {
       <img src={Ux} alt="ux/ui" />
 
     </div>
+  <Link to="/Ux">
     <p className="name-text">UX/UI Design</p>
+  </Link>
   </div>
 
   <div className="card-text">

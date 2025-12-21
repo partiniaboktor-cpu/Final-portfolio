@@ -75,6 +75,8 @@
 .arrow9 {
   margin-left: 6px;
   transition: transform 0.3s ease;
+  text-decoration: none;
+  color: black;
 }
 
 /* .projectLink9:hover .arrow9 {
