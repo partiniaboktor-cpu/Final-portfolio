@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import Nav from '../Components/Nav';
 import './Uxdetail.css';
 import zoo from '../Images/ux/giza zoo.png' ;
@@ -7,11 +7,31 @@ import zoomockup1 from '../Images/ux/zoo mockup 1.png'
 import zoomockup2 from '../Images/ux/zoo mockup 2.png'
 import BlurText from "../Animations/BlurText";
 import Footer from '../Components/Footer';
+import { supabase } from "../Supabase";
 
 const Uxdetail = () => {
     const handleAnimationComplete = () => {
     console.log("Animation finished");
   };
+
+const [loading, setLoading] = useState(true);
+const [Projects, setProjects] = useState("") ;
+
+
+useEffect(()=>{
+
+ async function getAllProjectsAPI(){
+  const res = await supabase.from("Projects").select("*");
+  setProjects(res.data);
+  // console.log(res.data);
+    setLoading(false);
+}
+getAllProjectsAPI();
+
+},[]);
+
+if (loading) return <p>Loading...</p>;
+
   return (
     <>
       <Nav />
@@ -29,43 +49,74 @@ const Uxdetail = () => {
         {/* Hero Section */}
         <div className="heroSection10">
           <span className="yearLabel10">2025</span>
-
+{Projects
+  .filter(Projects => Projects.id === 5)
+  .map(Projects => (  
           <div className="heroImageWrapper10">
             <img
-              src={zoo}
+              src={Projects.Cover_image}
               alt="World Wild Life"
               className="heroImage10"
             />
           </div>
+  ))
+}
         </div>
 
         {/* Overview Section */}
         <div className="overviewSection10">
           <div className="overviewLeft10">
             <h3 className="overviewTitle10">1- Project overview</h3>
+{Projects
+  .filter(Projects => Projects.id === 5)
+  .map(Projects => (  
             <p className="overviewText10">
-              The Shadia Coloring Poster is a digitally illustrated artwork created
-              using Adobe Illustrator, designed to transform a real image of Shadia
-              into a stylized, line-art composition suitable for coloring.
+              {Projects.Project_overview}
             </p>
-
+  ))
+}
             <h3 className="overviewTitle10">2- Tools i used</h3>
             <div className="toolItem10">
-              <img src={figma} alt="Figma" className="toolIcon10" />
-              <span className="toolName10">Figma</span>
+{Projects
+  .filter(Projects => Projects.id === 5)
+  .map(Projects => (  
+              <img src={Projects.icon} alt="Figma" className="toolIcon10" />
+  ))
+}
+{Projects
+  .filter(Projects => Projects.id === 5)
+  .map(Projects => (  
+              <span className="toolName10">{Projects.Tools}</span>
+  ))
+}
             </div>
           </div>
 
           <div className="overviewRight10">
+{Projects
+  .filter(Projects => Projects.id === 5)
+  .map(Projects => ( 
             <p className="sideItem10">
-              <strong>3- My role:</strong><br />UX/UI Designer
+              <strong>3- My role:</strong><br />{Projects.Role}
             </p>
+  ))
+}
+{Projects
+  .filter(Projects => Projects.id === 5)
+  .map(Projects => (  
             <p className="sideItem10">
-              <strong>4- Scope</strong><br />Websites
+              <strong>4- Scope</strong><br />{Projects.Scope}
             </p>
+  ))
+}
+{Projects
+  .filter(Projects => Projects.id === 5)
+  .map(Projects => (  
             <p className="sideItem10">
-              <strong>5- Time-frame</strong><br />4 weeks
+              <strong>5- Time-frame</strong><br />{Projects.Time_frame}
             </p>
+  ))
+}
           </div>
         </div>
 
@@ -82,19 +133,29 @@ const Uxdetail = () => {
 
           <div className="mockupsGrid10">
             <div className="mockupImageWrapper10">
+{Projects
+  .filter(Projects => Projects.id === 5)
+  .map(Projects => (  
               <img
-                src={zoomockup1}
+                src={Projects.Mockup}
                 alt="Mockup 1"
                 className="mockupImage10"
               />
+  ))
+}
             </div>
 
             <div className="mockupImageWrapper10">
+{Projects
+  .filter(Projects => Projects.id === 5)
+  .map(Projects => (
               <img
-                src={zoomockup2}
+                src={Projects.mockup2}
                 alt="Mockup 2"
                 className="mockupImage10"
               />
+  ))
+}
             </div>
           </div>
         </div>
