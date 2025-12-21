@@ -1,0 +1,82 @@
+/* Container */
+.portfolioContainer9 {
+  min-height: 100vh;
+  padding: 80px 0;
+  /* background-image: url("../Images/lightbackground.svg"); */
+  background-size: cover;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+/* Card */
+.projectCard9 {
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+/* Year */
+.projectYear9 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+/* Image Wrapper */
+.projectImageWrapper9 {
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 16px 0;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Image Animation */
+.projectImage9 {
+  width: 100%;
+  display: block;
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.projectImageWrapper9:hover .projectImage9 {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Footer */
+.projectFooter9 {
+  display: flex;
+  justify-content: center;
+  gap: 40%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  align-items: center;
+}
+
+.projectTitle9 {
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Link */
+.projectLink9 {
+  font-size: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.projectLink9:hover {
+  opacity: 0.6;
+}
+
+.arrow9 {
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+/* .projectLink9:hover .arrow9 {
+  transform: translateX(4px);
+} */

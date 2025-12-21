@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from "react";
 import WhiteNav from '../Components/WhiteNav';
 import '../Pages/Graphicdetail.css';
 import shadia from '../Images/shadia.png' ;
@@ -13,8 +13,11 @@ import fontposter2 from '../Images/fontposter2.png';
 import idcard from '../Images/idcard.png';
 import idcard2 from '../Images/idcard2.png';
 import tea from '../Images/tea.png';
+import { supabase } from "../Supabase";
 
 const Graphicdetail = () => {
+
+  
    const details = {
   "01": {
     title: "Shadia poster",
@@ -68,7 +71,23 @@ const Graphicdetail = () => {
     console.log("Animation finished");
   };
 
+  const [loading, setLoading] = useState(true);
+const [Projects, setProjects] = useState("") ;
 
+
+useEffect(()=>{
+
+ async function getAllProjectsAPI(){
+  const res = await supabase.from("Projects").select("*");
+  setProjects(res.data);
+  // console.log(res.data);
+    setLoading(false);
+}
+getAllProjectsAPI();
+
+},[]);
+
+if (loading) return <p>Loading...</p>;
 
 
 
@@ -121,25 +140,40 @@ const Graphicdetail = () => {
           />
         </div>
 
-        {/* Right */}
-        <div className="right7">
-          <p className="info7">
-            <strong>3- My role:</strong>
-            <br />
-            Graphic designer
-          </p>
 
+        <div className="right7">
+{Projects
+  .filter(Projects => Projects.id === 1)
+  .map(Projects => (
+    <p className="info7">
+      <strong>3- My role:</strong>
+      <br />
+      {Projects.Role}
+    </p>
+  ))
+}
+{Projects
+  .filter(Projects => Projects.id === 1)
+  .map(Projects => (
           <p className="info7">
             <strong>4- Scope</strong>
             <br />
-            {details[id].scope}
+            {Projects.Scope}
           </p>
+  ))
+}
 
+{Projects
+  .filter(Projects => Projects.id === 1)
+  .map(Projects => (
           <p className="info7">
             <strong>5- Time-frame</strong>
             <br />
-            {details[id].timeframe}
+            {Projects.Time_frame}
           </p>
+  ))
+}
+
         </div>
       </div>
     </section>
@@ -156,16 +190,21 @@ const Graphicdetail = () => {
         onAnimationComplete={handleAnimationComplete}
         className="text-2xl mb-8"
       />
-
+{Projects
+  .filter(Projects => Projects.id === 1)
+  .map(Projects => (
       <div className="mockups-grid7">
         <div className="mockup-card7">
-          <img src={details[id].mockup1} alt="Shadia mockup" />
+          <img src={Projects.Cover_image} alt="Shadia mockup" />
         </div>
 
         <div className="mockup-card7">
-          <img src={details[id].mockup2} alt="Shadia mockup" />
+          <img src={Projects.Mockup} alt="Shadia mockup" />
         </div>
       </div>
+  ))
+}
+
     </section>
 
 

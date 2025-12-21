@@ -17,7 +17,9 @@
 .category-cards-sec::-webkit-scrollbar {
   display: none;
 }
-
+.name-text{
+  text-decoration: none;
+}
 /* card */
 .card-text {
   display: flex;

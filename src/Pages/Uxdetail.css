@@ -1,0 +1,123 @@
+/* Page */
+.projectPage10 {
+  /* background-image: url("../Images/lightbackground.svg"); */
+  background-repeat: repeat;
+  background-size: cover;
+  padding-bottom: 120px;
+}
+
+/* Hero */
+.heroSection10 {
+  width: 80%;
+  margin: auto;
+  padding-top: 60px;
+}
+
+.yearLabel10 {
+  font-size: 24px;
+  opacity: 0.6;
+}
+
+.heroImageWrapper10 {
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.heroImage10 {
+  width: 100%;
+  transition: transform 1s ease;
+}
+
+.heroImageWrapper10:hover .heroImage10 {
+  transform: scale(1.05);
+}
+
+/* Overview */
+.overviewSection10 {
+  background-color: #1b1b1b;
+  color: #fff;
+  width: 100%;
+  margin-top: 80px;
+  padding: 60px 10%;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.overviewLeft10 {
+  width: 60%;
+}
+
+.overviewRight10 {
+  width: 40%;
+}
+
+.overviewTitle10 {
+  margin-top: 0;
+    font-size: 28px;
+}
+
+.overviewText10 {
+   font-size: 24px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  padding-top: 3%;
+  font-weight: 100;
+}
+
+/* Tools */
+.toolItem10 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 3%;
+}
+
+.toolIcon10 {
+  width: 10%;
+}
+
+.toolName10 {
+  font-size: 14px;
+}
+
+/* Side info */
+.sideItem10 {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+/* Mockups */
+.mockupsSection10 {
+  width: 80%;
+  margin: 120px auto 0;
+}
+
+.mockupsTitle10 {
+  text-align: center;
+  font-size: 32px;
+  font-family: cursive;
+  margin-bottom: 60px;
+}
+
+.mockupsGrid10 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.mockupImageWrapper10 {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.mockupImage10 {
+  width: 100%;
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.mockupImageWrapper10:hover .mockupImage10 {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}

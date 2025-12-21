@@ -74,7 +74,9 @@ if (loading) return <p>Loading...</p>;
             className="text-2xl mb-8"
           />
 {
-profile.map((profile)=>{
+profile
+.filter(profile => profile.id === 2)
+.map((profile)=>{
 return  <>
           <p className="hero-text">
            {profile.Bio}
@@ -89,14 +91,17 @@ return  <>
         <div className="hero-right">
           <div className="img-wrapper">
 {
-profile.map((profile)=>{
+profile
+.filter(profile => profile.id === 2)
+.map((profile)=>{
 return  <>
             <img src={profile.img} alt="Partinia" className="heros-img" />
 </>
 })
 }
             <span className="tag date">24 March 2005</span>
-            {
+
+{
 profile.map((profile)=>{
 return  <>
             <span className="tag city">{profile.location}</span>
@@ -188,15 +193,6 @@ return  <>
 
 </div>
 
-
-<div className="right-section">
-<h1 className="about-text top">About</h1>
-<h1 className="about-text bottom">About</h1>
-
-
-
-
-</div>
 
 </div>
 

@@ -62,7 +62,7 @@ const Categories = () => {
   <div className="card-text">
     <div className="img-wrapper">
       <img src={graphics} alt="graphic" />
-      <div className="overlay">View projects →</div>
+
     </div>
     <p className="name-text">Graphic design</p>
   </div>
@@ -71,7 +71,7 @@ const Categories = () => {
   <div className="card-text">
     <div className="img-wrapper">
       <img src={Ux} alt="ux/ui" />
-      <div className="overlay">View projects →</div>
+
     </div>
     <p className="name-text">UX/UI Design</p>
   </div>
@@ -79,7 +79,7 @@ const Categories = () => {
   <div className="card-text">
     <div className="img-wrapper">
       <img src={photography} alt="photography" />
-      <div className="overlay">View projects →</div>
+
     </div>
     <p className="name-text">Photography</p>
   </div>
@@ -87,7 +87,7 @@ const Categories = () => {
   <div className="card-text">
     <div className="img-wrapper">
       <img src={web} alt="web" />
-      <div className="overlay">View projects →</div>
+
     </div>
     <p className="name-text">Web developer</p>
   </div>

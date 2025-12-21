@@ -11,10 +11,9 @@ import { supabase } from "../Supabase";
 
 const blogsData = [
 
-
   {
     id: 1,
-    title: "Recommended Designers near Nasr City",
+    title: "Recommended Designers near Nasr City" ,
     image: blog1
   },
   {
