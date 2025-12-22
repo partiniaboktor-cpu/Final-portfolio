@@ -74,9 +74,11 @@ const Hero = () => {
         </div>
 
         <img className="star2" src={star} alt="" />
-
+{Hero
+  .filter(Hero => Hero.id === 1)
+  .map(Hero => ( 
         <DecryptedText
-          text="Bringing your product’s future glow-up from imagination to interface."
+          text={Hero.caption}
           speed={50}
           maxIterations={20}
           characters="ABCD1234!?"
@@ -84,6 +86,8 @@ const Hero = () => {
           parentClassName="all-letters"
           encryptedClassName="encrypted"
         />
+  ))
+}
       </div>
     </div>
   );

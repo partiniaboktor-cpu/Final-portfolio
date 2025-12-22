@@ -17,18 +17,19 @@ import four from "../Images/four.svg";
 import Footer from "../Components/Footer";
 import Contact from "../Components/Contact";
 import { supabase } from "../Supabase";
+import DecryptedText from "../Animations/DecryptedText";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
-  const [heroData, setHeroData] = useState([]);
+  const [me, setme] = useState([]);
 
   useEffect(() => {
-    async function getAllHeroAPI() {
-      const { data } = await supabase.from("Hero").select("*");
-      setHeroData(data || []);
+    async function getAllmeAPI() {
+      const { data } = await supabase.from("me").select("*");
+      setme(data || []);
       setLoading(false);
     }
-    getAllHeroAPI();
+    getAllmeAPI();
   }, []);
 
   const handleAnimationComplete = () => {
@@ -44,22 +45,33 @@ const Home = () => {
 
       {/* ✅ YOU ASKED NOT TO REMOVE THIS — IT IS UNTOUCHED */}
       <div className="whoami-container">
-        <BlurText
-          text="Who am i ?"
-          delay={200}
-          animateBy="letters"
-          direction="top"
-          onAnimationComplete={handleAnimationComplete}
-          className="text-2xl mb-8"
-        />
+{me
+.filter(me => me.id === 1)
+.map(me => ( 
+<DecryptedText
+text={me.title}
+speed={50}
+maxIterations={20}
+characters="ABCD1234!?"
+className="revealed"
+parentClassName="all-letters"
+ encryptedClassName="encrypted"
+/>
+))
+ }
 
+{me
+        .filter(me => me.id === 1)
+        .map(me => ( 
         <div className="center-image-wrapper">
           <img
-            src={myimg2}
+            src={me.image}
             alt="profile"
             className="center-image"
           />
         </div>
+  ))
+      }
 
         <div className="icon beach"></div>
         <div className="icon notes"></div>
