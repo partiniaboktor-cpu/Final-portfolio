@@ -42,6 +42,24 @@ const WorkCard = ({ image, title }) => (
 <p className="work-label">{title}</p>
 </div>
 );
+
+const [loading, setLoading] = useState(true);
+const [Hero, setHero] = useState("") ;
+
+
+useEffect(()=>{
+
+ async function getAllHeroAPI(){
+  const res = await supabase.from("Hero").select("*");
+  setHero(res.data);
+  // console.log(res.data);
+    setLoading(false);
+}
+getAllHeroAPI();
+
+},[]);
+
+if (loading) return <p>Loading...</p>;
   
   return (
     <>
