@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Categories.css";
 import WhiteNav from "../Components/WhiteNav";
-import ScrollStack from "../Animations/Scrollstack"; // ✅ Only default export
 import Footer from "../Components/Footer";
-import TiltedCard from '../Animations/Tiltedcard';
 import InfiniteMenu from '../Animations/InfiniteMenu'
 import coding from '../Images/webdeveloper.svg'
 import ux from '../Images/ux.svg'
@@ -14,6 +12,7 @@ import graphics from '../Images/graphic.png'
 import Ux from '../Images/ux/ui.png'
 import photography from '../Images/photography.png'
 import web from '../Images/web programming.png'
+import { supabase } from "../Supabase";
 
 
 const Categories = () => {
@@ -45,6 +44,27 @@ const Categories = () => {
   }
 ];
 
+
+
+
+const [loading, setLoading] = useState(true);
+const [Categories, setCategories] = useState("") ;
+
+
+useEffect(()=>{
+
+ async function getAllCategoriesAPI(){
+  const res = await supabase.from("Categories").select("*");
+  setCategories(res.data);
+  // console.log(res.data);
+    setLoading(false);
+}
+getAllCategoriesAPI();
+
+},[]);
+
+if (loading) return <p>Loading...</p>;
+
   return (
     <>
       <WhiteNav />
@@ -61,39 +81,76 @@ const Categories = () => {
 <Link className="graphic-link" to="/graphic">
   <div className="card-text">
     <div className="img-wrapper">
-      <img src={graphics} alt="graphic" />
-
+{Categories
+  .filter(Categories => Categories.id === 1)
+  .map(Categories => (
+      <img src={Categories.image} alt="graphic" />
+  ))
+}
     </div>
-    <p className="name-text">Graphic design</p>
+{Categories
+  .filter(Categories => Categories.id === 1)
+  .map(Categories => (
+    <p className="name-text">{Categories.Name}</p>
+  ))
+}
   </div>
 </Link>
 
+  <Link className="graphic-link" to="/Ux">
   <div className="card-text">
     <div className="img-wrapper">
-      <img src={Ux} alt="ux/ui" />
-
+{Categories
+  .filter(Categories => Categories.id === 2)
+  .map(Categories => (
+      <img src={Categories.image} alt="ux/ui" />
+  ))
+}
     </div>
-  <Link to="/Ux">
-    <p className="name-text">UX/UI Design</p>
+{Categories
+  .filter(Categories => Categories.id === 2)
+  .map(Categories => (
+    <p className="name-text">{Categories.Name}</p>
+  ))
+}
+  </div>
   </Link>
-  </div>
 
+    <Link className="graphic-link" to="/photography">
   <div className="card-text">
     <div className="img-wrapper">
-      <img src={photography} alt="photography" />
-
+{Categories
+  .filter(Categories => Categories.id === 3)
+  .map(Categories => (
+      <img src={Categories.image} alt="photography" />
+  ))
+}
     </div>
-    <Link to="/photography">
-    <p className="name-text">Photography</p>
+{Categories
+  .filter(Categories => Categories.id === 3)
+  .map(Categories => (
+    <p className="name-text">{Categories.Name}</p>
+  ))
+}
+  </div>
    </Link>
-  </div>
+
 
   <div className="card-text">
     <div className="img-wrapper">
-      <img src={web} alt="web" />
-
+ {Categories
+  .filter(Categories => Categories.id === 4)
+  .map(Categories => (     
+      <img src={Categories.image} alt="web" />
+  ))
+}
     </div>
-    <p className="name-text">Web developer</p>
+{Categories
+  .filter(Categories => Categories.id === 4)
+  .map(Categories => (
+    <p className="name-text">{Categories.Name}</p>
+  ))
+}
   </div>
 
 </div>

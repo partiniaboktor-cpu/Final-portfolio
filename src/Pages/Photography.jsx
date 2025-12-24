@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Nav from '../Components/Nav';
 import BlurText from "../Animations/BlurText";
-import zooImg from '../Images/ux/giza zoo.png';
-import serumImg from '../Images/ux/Offering web 1.png';
-import furnitureImg from '../Images/ux/furniture.png';
 import '../Pages/Ux.css';
 import Footer from "../Components/Footer";
-import customImg from '../Images/custom.png'
 import { supabase } from "../Supabase";
 import { Link } from "react-router-dom";
-import Uxdetail from "./Uxdetail1";
-import { useParams } from 'react-router-dom';
-import gizazoo from '../Images/ux/giza zoo.png' ;
+
 const UX = () => {
    
-
-
-  
 
     const handleAnimationComplete = () => {
     console.log("Animation finished");
