@@ -16,6 +16,10 @@ import Photography from './Pages/Photography';
 import Uxdetail2 from './Pages/Uxdetail2';
 import Uxdetail3 from './Pages/Uxdetail3';
 import Uxdetail4 from './Pages/Uxdetail4';
+import Photography1 from './Pages/Photography1';
+import Photography2 from './Pages/Photography2';
+import Photography3 from './Pages/Photography3';
+import Photography4 from './Pages/Photography4';
 
 const RoutingApp = () => {
   return (
@@ -36,6 +40,10 @@ const RoutingApp = () => {
         <Route path='/uxdetail3' element={<Uxdetail3 />} />
         <Route path='/uxdetail4' element={<Uxdetail4 />} />
         <Route path='/photography' element={<Photography />} />
+        <Route path='/photography1' element={<Photography1 />} />
+        <Route path='/photography2' element={<Photography2 />} />
+        <Route path='/photography3' element={<Photography3 />} />
+        <Route path='/photography4' element={<Photography4 />} />
 
       </Routes>
     </BrowserRouter>

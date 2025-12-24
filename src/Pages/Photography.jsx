@@ -81,12 +81,12 @@ if (loading) return <p>Loading...</p>;
 {Projects
   .filter(Projects => Projects.id === 9) // use lowercase variable for clarity
   .map(Projects => (
-<Link to="/Uxdetail1 ">
+<Link to="/photography1 ">
   <p className="projectTitle9">{Projects.title}</p>
 </Link>
   ))
 }
-<Link to="/Uxdetail1 ">
+<Link to="/photography1 ">
           <span className="projectLink9">
             View detail <span className="arrow9">→</span>
           </span>
@@ -99,7 +99,7 @@ if (loading) return <p>Loading...</p>;
         <span className="projectYear9">2025</span>
 
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => (
         <div className="projectImageWrapper9">
           <img
@@ -113,14 +113,14 @@ if (loading) return <p>Loading...</p>;
   
         <div className="projectFooter9">
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => (
-  <Link to="/Uxdetail2 ">
+  <Link to="/photography2 ">
           <p className="projectTitle9">{Projects.title}</p>
   </Link>
   ))
 }
-  <Link to="/Uxdetail2 ">
+  <Link to="/photography2 ">
           <span className="projectLink9">
             View detail <span className="arrow9">→</span>
           </span>
@@ -132,7 +132,7 @@ if (loading) return <p>Loading...</p>;
       <div className="projectCard9">
         <span className="projectYear9">2025</span>
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 11)
   .map(Projects => (
         <div className="projectImageWrapper9">
           <img
@@ -144,13 +144,13 @@ if (loading) return <p>Loading...</p>;
   ))
 }
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 11)
   .map(Projects => (
         <div className="projectFooter9">
-  <Link to="/uxdetail3 ">
+  <Link to="/photography3 ">
           <p className="projectTitle9">{Projects.title}</p>
   </Link>
-    <Link to="/uxdetail3 ">
+    <Link to="/photography3 ">
           <span className="projectLink9">
             View detail <span className="arrow9">→</span>
           </span>
@@ -166,7 +166,7 @@ if (loading) return <p>Loading...</p>;
       <div className="projectCard9">
         <span className="projectYear9">2025</span>
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 12)
   .map(Projects => (
         <div className="projectImageWrapper9">
           <img
@@ -178,15 +178,15 @@ if (loading) return <p>Loading...</p>;
   ))
 }
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 12)
   .map(Projects => (
   
     
         <div className="projectFooter9">
-           <Link to="/uxdetail4 ">
+           <Link to="/photography4 ">
           <p className="projectTitle9">{Projects.title}</p>
           </Link>
-               <Link to="/uxdetail4 ">
+               <Link to="/photography4 ">
           <span className="projectLink9">
             View detail <span className="arrow9">→</span>
           </span>

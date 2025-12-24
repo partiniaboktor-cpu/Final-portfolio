@@ -39,7 +39,7 @@ if (loading) return <p>Loading...</p>;
       <Nav />
 
 {Projects
-  .filter(Projects => Projects.id === 9) // use lowercase variable for clarity
+  .filter(Projects => Projects.id === 10) // use lowercase variable for clarity
   .map(Projects => (
    <BlurText
         text={Projects.title}
@@ -56,7 +56,7 @@ if (loading) return <p>Loading...</p>;
         <div className="heroSection10">
           <span className="yearLabel10">2025</span>
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => (  
           <div className="heroImageWrapper10">
             <img
@@ -74,7 +74,7 @@ if (loading) return <p>Loading...</p>;
           <div className="overviewLeft10">
             <h3 className="overviewTitle10">1- Project overview</h3>
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => (  
             <p className="overviewText10">
               {Projects.Project_overview}
@@ -84,13 +84,13 @@ if (loading) return <p>Loading...</p>;
             <h3 className="overviewTitle10">2- Tools i used</h3>
             <div className="toolItem10">
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => (  
               <img src={Projects.icon} alt="Figma" className="toolIcon10" />
   ))
 }
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => (  
               <span className="toolName10">{Projects.Tools}</span>
   ))
@@ -100,7 +100,7 @@ if (loading) return <p>Loading...</p>;
 
           <div className="overviewRight10">
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => ( 
             <p className="sideItem10">
               <strong>3- My role:</strong><br />{Projects.Role}
@@ -108,7 +108,7 @@ if (loading) return <p>Loading...</p>;
   ))
 }
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => (  
             <p className="sideItem10">
               <strong>4- Scope</strong><br />{Projects.Scope}
@@ -116,7 +116,7 @@ if (loading) return <p>Loading...</p>;
   ))
 }
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => (  
             <p className="sideItem10">
               <strong>5- Time-frame</strong><br />{Projects.Time_frame}
@@ -140,7 +140,7 @@ if (loading) return <p>Loading...</p>;
           <div className="mockupsGrid10">
             <div className="mockupImageWrapper10">
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => (  
               <img
                 src={Projects.Mockup}
@@ -153,7 +153,7 @@ if (loading) return <p>Loading...</p>;
 
             <div className="mockupImageWrapper10">
 {Projects
-  .filter(Projects => Projects.id === 9)
+  .filter(Projects => Projects.id === 10)
   .map(Projects => (
               <img
                 src={Projects.mockup2}
