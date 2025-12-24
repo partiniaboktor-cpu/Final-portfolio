@@ -7,6 +7,7 @@ import icon1 from '../Images/icon1.svg' ;
 import { Link } from "react-router-dom";
 import { supabase } from "../Supabase";
 
+
 const Navbar = () => {
 
 const [loading, setLoading] = useState(true);

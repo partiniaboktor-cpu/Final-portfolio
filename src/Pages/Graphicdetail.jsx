@@ -57,21 +57,17 @@ const Graphicdetail = () => {
     mockup2: "fontposter2" 
   }
 
-
-
 };
 
 
     let {id}= useParams ();
 
 
-
-
     const handleAnimationComplete = () => {
     console.log("Animation finished");
   };
 
-  const [loading, setLoading] = useState(true);
+const [loading, setLoading] = useState(true);
 const [Projects, setProjects] = useState("") ;
 
 
@@ -133,11 +129,16 @@ if (loading) return <p>Loading...</p>;
 
         {/* Center Image */}
         <div className="center7">
+{Projects
+  .filter(Projects => Projects.id === 1)
+  .map(Projects => (
           <img
-            src={shadia}
+            src={Projects.Cover_image}
             alt="Shadia Poster"
             className="image7"
           />
+  ))
+}
         </div>
 
 

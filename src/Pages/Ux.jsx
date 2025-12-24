@@ -10,10 +10,15 @@ import customImg from '../Images/custom.png'
 import { supabase } from "../Supabase";
 import { Link } from "react-router-dom";
 import Uxdetail from "./Uxdetail";
-
+import { useParams } from 'react-router-dom';
+import gizazoo from '../Images/ux/giza zoo.png' ;
 const UX = () => {
    
-        const handleAnimationComplete = () => {
+
+
+  
+
+    const handleAnimationComplete = () => {
     console.log("Animation finished");
   };
 
@@ -34,6 +39,11 @@ getAllProjectsAPI();
 },[]);
 
 if (loading) return <p>Loading...</p>;
+
+
+
+
+
 
   
     return ( <>

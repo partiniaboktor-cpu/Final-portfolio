@@ -8,8 +8,55 @@ import zoomockup2 from '../Images/ux/zoo mockup 2.png'
 import BlurText from "../Animations/BlurText";
 import Footer from '../Components/Footer';
 import { supabase } from "../Supabase";
+import { useParams } from 'react-router-dom';
+import gizazoo from '../Images/ux/giza zoo.png' ;
 
 const Uxdetail = () => {
+
+
+ const details = {
+  "01": {
+    img: "gizazoo",
+    overview: "The Shadia Coloring Poster is a digitally illustrated artwork created using Adobe Illustrator, designed to transform a real image of Shadia into a stylized, line-art composition suitable for coloring. The project focuses on simplifying complex visual details while preserving character identity, resulting in a clean, balanced, and visually engaging coloring poster." ,
+    tools: "Figma",
+    app: "Figma",
+    role: "UX/UI Designer",
+    scope: "websites",
+    timeframe: "3 weeks",
+  },
+  "02":{
+  img: "gizazoo",
+    overview: "The Shadia Coloring Poster is a digitally illustrated artwork created using Adobe Illustrator, designed to transform a real image of Shadia into a stylized, line-art composition suitable for coloring. The project focuses on simplifying complex visual details while preserving character identity, resulting in a clean, balanced, and visually engaging coloring poster." ,
+    tools: "Figma",
+    app: "Figma",
+    role: "UX/UI Designer",
+    scope: "websites",
+    timeframe: "3 weeks",
+  },
+ "03":{
+    img: "gizazoo",
+    overview: "The Shadia Coloring Poster is a digitally illustrated artwork created using Adobe Illustrator, designed to transform a real image of Shadia into a stylized, line-art composition suitable for coloring. The project focuses on simplifying complex visual details while preserving character identity, resulting in a clean, balanced, and visually engaging coloring poster." ,
+    tools: "Figma",
+    app: "Figma",
+    role: "UX/UI Designer",
+    scope: "websites",
+    timeframe: "3 weeks",
+  },
+ "04":{
+    img: "gizazoo",
+    overview: "The Shadia Coloring Poster is a digitally illustrated artwork created using Adobe Illustrator, designed to transform a real image of Shadia into a stylized, line-art composition suitable for coloring. The project focuses on simplifying complex visual details while preserving character identity, resulting in a clean, balanced, and visually engaging coloring poster." ,
+    tools: "Figma",
+    app: "Figma",
+    role: "UX/UI Designer",
+    scope: "websites",
+    timeframe: "3 weeks",
+  }
+
+};
+
+
+    let {id}= useParams ();
+
     const handleAnimationComplete = () => {
     console.log("Animation finished");
   };
