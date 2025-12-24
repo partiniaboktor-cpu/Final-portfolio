@@ -11,8 +11,11 @@ import Graphic from './Pages/Graphic';
 import Graphicdetail from './Pages/Graphicdetail';
 import Test from './Pages/Test';
 import UX from './Pages/Ux';
-import Uxdetail from './Pages/Uxdetail';
+import Uxdetail1 from './Pages/Uxdetail1';
 import Photography from './Pages/Photography';
+import Uxdetail2 from './Pages/Uxdetail2';
+import Uxdetail3 from './Pages/Uxdetail3';
+import Uxdetail4 from './Pages/Uxdetail4';
 
 const RoutingApp = () => {
   return (
@@ -28,7 +31,11 @@ const RoutingApp = () => {
         <Route path='/graphic/:id' element={<Graphicdetail />} />
         <Route path='/test' element={<Test />} />
         <Route path='/ux' element={<UX />} />
-        <Route path='/ux/:id' element={<Uxdetail />} />
+        <Route path='/uxdetail1' element={<Uxdetail1 />} />
+        <Route path='/uxdetail2' element={<Uxdetail2 />} />
+        <Route path='/uxdetail3' element={<Uxdetail3 />} />
+        <Route path='/uxdetail4' element={<Uxdetail4 />} />
+
         <Route path='/photography' element={<Photography />} />
 
       </Routes>

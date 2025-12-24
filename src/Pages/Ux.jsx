@@ -9,7 +9,7 @@ import Footer from "../Components/Footer";
 import customImg from '../Images/custom.png'
 import { supabase } from "../Supabase";
 import { Link } from "react-router-dom";
-import Uxdetail from "./Uxdetail";
+import Uxdetail from "./Uxdetail1";
 import { useParams } from 'react-router-dom';
 import gizazoo from '../Images/ux/giza zoo.png' ;
 const UX = () => {
@@ -79,14 +79,14 @@ if (loading) return <p>Loading...</p>;
 
         <div className="projectFooter9">
 {Projects
-  .filter(Projects => Projects.id === 5)
-  .map(Projects => (           
-<Link to="/Uxdetail">
+  .filter(Projects => Projects.id === 5) // use lowercase variable for clarity
+  .map(Projects => (
+<Link to="/Uxdetail1 ">
   <p className="projectTitle9">{Projects.title}</p>
 </Link>
   ))
 }
-<Link to="/Uxdetail">
+<Link to="/Uxdetail1 ">
           <span className="projectLink9">
             View detail <span className="arrow9">→</span>
           </span>
@@ -115,12 +115,16 @@ if (loading) return <p>Loading...</p>;
 {Projects
   .filter(Projects => Projects.id === 6)
   .map(Projects => (
+  <Link to="/Uxdetail2 ">
           <p className="projectTitle9">{Projects.title}</p>
+  </Link>
   ))
 }
+  <Link to="/Uxdetail2 ">
           <span className="projectLink9">
             View detail <span className="arrow9">→</span>
           </span>
+</Link>
         </div>
       </div>
 
@@ -143,10 +147,14 @@ if (loading) return <p>Loading...</p>;
   .filter(Projects => Projects.id === 7)
   .map(Projects => (
         <div className="projectFooter9">
+  <Link to="/uxdetail3 ">
           <p className="projectTitle9">{Projects.title}</p>
+  </Link>
+    <Link to="/uxdetail3 ">
           <span className="projectLink9">
             View detail <span className="arrow9">→</span>
           </span>
+    </Link>
         </div>
   ))
 }
