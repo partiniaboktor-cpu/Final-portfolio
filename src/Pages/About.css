@@ -14,7 +14,7 @@
 
 /* LEFT SIDE */
 .hero-left {
-  width: 40%;
+  width: 50%;
 }
 
 .hello {
@@ -38,7 +38,7 @@
 
 /* RIGHT SIDE */
 .hero-right {
-  width: 50%;
+  /* width: 50%; */
   position: relative;
 }
 

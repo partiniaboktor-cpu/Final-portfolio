@@ -22,6 +22,7 @@ import DecryptedText from "../Animations/DecryptedText";
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [me, setme] = useState([]);
+  const [Skills, setSkills] = useState([]);
 
   useEffect(() => {
     async function getAllmeAPI() {
@@ -30,6 +31,14 @@ const Home = () => {
       setLoading(false);
     }
     getAllmeAPI();
+  }, []);
+
+  useEffect(() => {
+    async function getAllSkillsAPI() {
+      const { data } = await supabase.from("Skills").select("*");
+      setSkills(data || []);
+    }
+    getAllSkillsAPI();
   }, []);
 
   const handleAnimationComplete = () => {
@@ -48,21 +57,19 @@ const Home = () => {
 {me
 .filter(me => me.id === 1)
 .map(me => ( 
-<DecryptedText
-text={me.title}
-speed={50}
-maxIterations={20}
-characters="ABCD1234!?"
-className="revealed"
-parentClassName="all-letters"
- encryptedClassName="encrypted"
-/>
+ <BlurText
+          text={me.title}
+          delay={200}
+          animateBy="letters"
+          direction="top"
+          onAnimationComplete={handleAnimationComplete}
+        />
 ))
  }
 
 {me
-        .filter(me => me.id === 1)
-        .map(me => ( 
+.filter(me => me.id === 1)
+.map(me => ( 
         <div className="center-image-wrapper">
           <img
             src={me.image}
@@ -71,7 +78,7 @@ parentClassName="all-letters"
           />
         </div>
   ))
-      }
+}
 
         <div className="icon beach"></div>
         <div className="icon notes"></div>
@@ -82,29 +89,48 @@ parentClassName="all-letters"
       </div>
 
       <div className="skills-container">
+{Skills
+.filter(Skills => Skills.id === 8)
+.map(Skills => ( 
         <BlurText
-          text="Skills"
+          text={Skills.Name}
           delay={200}
           animateBy="letters"
           direction="top"
           onAnimationComplete={handleAnimationComplete}
           className="text-2xl mb-8"
         />
-
+  ))
+}
         <section className="section">
-          <h2 className="section-title">Technical skills</h2>
+{Skills
+.filter(Skills => Skills.id === 7)
+.map(Skills => ( 
+          <h2 className="section-title">{Skills.name2}</h2>
+  ))
+}
+{Skills
+.filter(Skills => Skills.id === 1)
+.map(Skills => ( 
           <div className="icons-row">
-            <img src={figma} alt="Figma" />
-            <img src={ai} alt="Illustrator" />
+            <img src={Skills.Image} alt="Figma" />
+            <img src={Skills.Image} alt="Illustrator" />
             <img src={AE} alt="After Effects" />
             <img src={ps} alt="Photoshop" />
             <img src={vs} alt="VS Code" />
             <img src={js} alt="JavaScript" />
           </div>
+  ))
+}
         </section>
 
         <section className="section">
-          <h2 className="section-title">Social skills</h2>
+{Skills
+.filter(Skills => Skills.id === 7)
+.map(Skills => ( 
+          <h2 className="section-title">{Skills.Name}</h2>
+  ))
+}
           <div className="icons-row">
             <img src={one} alt="Idea" />
             <img src={two} alt="Teamwork" />
