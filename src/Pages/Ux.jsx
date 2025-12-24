@@ -38,6 +38,21 @@ getAllProjectsAPI();
 
 },[]);
 
+
+const [Categories, setCategories] = useState("") ;
+
+
+useEffect(()=>{
+
+ async function getAllCategoriesAPI(){
+  const res = await supabase.from("Categories").select("*");
+  setCategories(res.data);
+  // console.log(res.data);
+}
+getAllCategoriesAPI();
+
+},[]);
+
 if (loading) return <p>Loading...</p>;
 
 
@@ -49,16 +64,19 @@ if (loading) return <p>Loading...</p>;
     return ( <>
     
     <Nav />
-
+{Categories
+  .filter(Categories => Categories.id === 2)
+  .map(Categories => (
       <BlurText
-        text="UX/UI  Design"
+        text={Categories.Name}
         delay={200}
         animateBy="letters"
         direction="top"
         onAnimationComplete={handleAnimationComplete}
         className="text-2xl mb-8"
       />  
-    
+   ))
+}   
  <section className="portfolioContainer9">
 
       {/* Project 1 */}
