@@ -99,12 +99,12 @@ return  <>
 </>
 })
 }
-            <span className="tag date">24 March 2005</span>
+            {/* <span className="tag date">24 March 2005</span> */}
 
 {
 profile.map((profile)=>{
 return  <>
-            <span className="tag city">{profile.location}</span>
+            {/* <span className="tag city">{profile.location}</span> */}
             </>
 })
 }
