@@ -180,11 +180,17 @@ if (loading) return <p>Loading...</p>;
 {Projects
   .filter(Projects => Projects.id === 8)
   .map(Projects => (
+  
+    
         <div className="projectFooter9">
+           <Link to="/uxdetail4 ">
           <p className="projectTitle9">{Projects.title}</p>
+          </Link>
+               <Link to="/uxdetail4 ">
           <span className="projectLink9">
             View detail <span className="arrow9">→</span>
           </span>
+          </Link>
         </div>
   ))
 }

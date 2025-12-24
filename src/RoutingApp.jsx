@@ -35,7 +35,6 @@ const RoutingApp = () => {
         <Route path='/uxdetail2' element={<Uxdetail2 />} />
         <Route path='/uxdetail3' element={<Uxdetail3 />} />
         <Route path='/uxdetail4' element={<Uxdetail4 />} />
-
         <Route path='/photography' element={<Photography />} />
 
       </Routes>
